@@ -261,6 +261,9 @@ margin: 4px;
     height: 149px;
     object-fit: contain;
 }
+.sidebar-contact,.sidebar-logo{
+    display: none;
+}
 .feature-card{
     display: flex;
     flex-wrap: wrap;
@@ -378,7 +381,18 @@ flex-direction: column;
   }
   
  
+  .nav-top {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    /* align-items: center; */
+    /* margin-bottom: 40px; */
+  }
 
+  .sidebar-logo {
+    width: 180px;
+    display: block;
+  }
   
   /* When sidebar (menu) is open, slide in contact button */
   .menu-toggle:checked ~ .contact-btn {
@@ -390,7 +404,6 @@ flex-direction: column;
      right:0;
       }
      
-   
       .close-icon{
         display: block;
         position: absolute;

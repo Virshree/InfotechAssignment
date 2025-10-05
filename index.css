@@ -88,10 +88,43 @@
     text-transform: capitalize;
     font-family: "Figtree", sans-serif;
 }
-.deserves-text{
+.deserves-text {
     color: #FA1239;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
   
-}
+  /* First underline */
+  .deserves-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;         /* distance under text */
+    left: 19px;
+    width: 70%;
+    height: 2px;       /* thickness */
+    background-color: #FA1239;
+    border-radius: 10px / 20px;
+  
+   
+     /* flatten curve */
+  }
+  
+  /* Second underline */
+  .deserves-text::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;      /* lower than first underline */
+    left: 15%;         /* centered under text */
+    width: 70%;        /* shorter */
+    height: 6px;
+  
+    background-color: #FA1239;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform: scaleY(0.5);
+  }
+  
+ 
 .description{
     font-size: 16px;
     color: black;
@@ -109,6 +142,7 @@
     color:#FA1239; ;
     border: none;
     border-radius: 25px;
+    box-shadow: 1px 1px 2px #FA1239;
     border: 1px solid #FA1239;;
     text-transform: uppercase;
     font-size: 18px;
@@ -269,6 +303,7 @@ flex-direction: column;
     border: none;
     font-size: 20px;
   margin: 10px;
+    box-shadow: 0 4px 10px rgba(250, 18, 57, 0.5);
   
   cursor: pointer;
 }
@@ -286,6 +321,7 @@ flex-direction: column;
 }
 /*  Mobile View */
 @media only screen and (max-width:768px){
+   
     .logo{
         width: 130px;
         margin-left: 30px;
@@ -319,25 +355,59 @@ flex-direction: column;
       .menu-toggle{
         display: none;
     }
+    /* Menu icon styling */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
+    display: block;
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+  }
+  
+  /* Hide menu icon when sidebar (checkbox) is checked */
+  .menu-toggle:checked + .menu-icon {
+    display: none;
+  }
+  
+  /* Sidebar show/hide */
+
+  
+  /* When sidebar (menu) is open, slide in contact button */
+  .menu-toggle:checked ~ .contact-btn {
+    display: block;
+  }
+
       /* Slide in when checkbox is checked */
       .menu-toggle:checked + .menu-icon +.nav-items {
      right:0;
       }
      
-    .contact-btn{
-        
-        display: block;
-    }
+   
       .close-icon{
         display: block;
         position: absolute;
         top:25px;
-        margin-left: 217px;
+    margin-left: 317px;
         font-size: 32px;
         z-index: 1001;
         cursor: pointer;
         color: #FA1239;
         transition: transform 0.2s ease;
+      }
+      .menu-icon::before,.menu-icon::after{
+        display: none;
+      }
+      .deserves-text::before,
+      .deserves-text::after {
+        display: none;
       }
       .menu-icon {
         display: block;
@@ -364,9 +434,8 @@ flex-direction: column;
       }
     .hero-section{
         display: flex;
-        /* flex-direction: column; */
         width: 100%;
-        height: 942px;
+        height: 1000px;
     }
     .section-info{
         font-size: 20px;
@@ -389,9 +458,11 @@ flex-direction: column;
 
     }
     .resume-btn,.contact-btn{
-        display: block;
-     margin: 20px;
-        margin: auto;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 12px;
+        margin-left: 150px;
     }
     .woman-image{
         margin: auto;
@@ -406,8 +477,9 @@ flex-direction: column;
     .instructor-rating{
         position: relative;
         margin-top: 350px;
-        width: 179px;
+        width: 174px;
         height: 64px;
+        border-radius: 10px;
     }
     .rating{
         font-size: 22px;
@@ -417,11 +489,14 @@ flex-direction: column;
         font-family: 'Inter';
     }
     .card-rating>p{
-        font-size: 18px;
+        font-size: 14px;
         margin-top: -14px;
+        width: 108px;
+        font-family: 'Figtree';
+       padding: 3px;
     }
     .star{
-        font-size: 30px;
+        font-size: 42px;
         margin: 10px;
     }
     .resume-created{

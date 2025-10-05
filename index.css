@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 .hero-section{
-    width: 100%;
+    /* width: 100%; */
     background-image: linear-gradient(to left,#FFE4E9 0%, #FFBFCA 100%);
     display: flex;
     justify-content: space-between;
@@ -377,7 +377,7 @@ flex-direction: column;
     display: none;
   }
   
-  /* Sidebar show/hide */
+ 
 
   
   /* When sidebar (menu) is open, slide in contact button */
@@ -432,11 +432,7 @@ flex-direction: column;
       .nav-item:hover {
         color: #fa1239;
       }
-    .hero-section{
-        display: flex;
-        width: 100%;
-        height: 1000px;
-    }
+     
     .section-info{
         font-size: 20px;
         width: 100%;
@@ -449,8 +445,7 @@ flex-direction: column;
     }
  
     .description{
-        margin: auto;
-        /* max-width: 260px; */
+      margin: auto;
         font-size: 18px;
         padding: 10px;
         /* margin-bottom: 200px; */

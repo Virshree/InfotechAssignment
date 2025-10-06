@@ -542,10 +542,21 @@ flex-direction: column;
 @media (max-width: 500px) {
     .main-container {
       width: 100%;
-      /* overflow-x: hidden; */
+   
     }
   
 
+.description{
+    width: 340px;
+    height: 204px;
+    /* text-align: justify; */
+    margin-bottom: 20px;
+}
+.hero-buttons{
+ width: 340px;
+ height: 116px;
+ margin: 10px;
+}
 
     .header-container {
       width: 100%;
@@ -561,19 +572,6 @@ flex-direction: column;
     }
   
    
-    .nav-items{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        position: fixed;
-        top: 0;
-        right: -100%;/* hidden off-screen*/
-        width: 270px;
-        height: 100%;
-        background: #FFE3E8;
-        padding: 80px 20px 20px; /* extra top padding for close icon */
-        box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s ease;
-        z-index: 999;    }
+    
   }
   
